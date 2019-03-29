@@ -7,11 +7,6 @@
 #include <unistd.h>
 #include <stdlib.h>
 
-// This code gets a segmentation fault 11 and doesn't write in the file
-// I'm not totally sure what's causing the error
-// seg fault: 11 suggests I'm trying to write info somewhere I don't
-// have access to but I'm not writing to memory
-// tried with different fopen modes too with no success...
 int main(void)
 {
     // create file pointer
