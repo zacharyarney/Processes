@@ -17,7 +17,7 @@ int main(void)
     // create file pointer
     FILE *fp;
     // open file
-    fopen("text.txt", "w");
+    fp = fopen("text.txt", "w");
     fork();
     // write to file
     fprintf(fp, "Maybe we're writing this twice?\n");
