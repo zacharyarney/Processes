@@ -10,7 +10,20 @@
 
 int main(void)
 {
-    // Your code here    
+    int pid = fork();
 
+    if (pid == 0) {
+        execlp("ls", "ls", NULL);
+        // p passes the PATH to the new process
+        // e passes the whole env to the new process 
+        // Seems like with execv() you pass in an array as the second argument
+        // with all of the command arguments. This would be good for making
+        // the command dynamic if the number of args is unknown.
+            // example:
+            // char *flags[] = {"ls", "-la", "-R", "-p", NULL};
+            // execvp("ls", flags);
+    }
+
+    wait(NULL);
     return 0;
 }
